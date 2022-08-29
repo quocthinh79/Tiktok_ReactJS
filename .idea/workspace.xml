@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca987d60-9df3-446a-99cb-1bbb1c5e3948" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/Home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/GlobalStyles/GlobalStyles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/GlobalStyles/GlobalStyles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Layout/DefaultLayout/Sidebar/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Layout/DefaultLayout/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Layout/HeaderOnly/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Layout/components/Header/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Layout/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +73,7 @@
       <workItem from="1661765887565" duration="301000" />
       <workItem from="1661766224883" duration="162000" />
       <workItem from="1661766427394" duration="5000" />
+      <workItem from="1661777689574" duration="279000" />
     </task>
     <servers />
   </component>
