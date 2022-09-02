@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,cAAc,EAAE,MAAM;CAU1B;;AAbD,AAKK,QALG,CAKH,UAAU,CAAC;EACN,KAAK,EAAE,2BAA2B;EAClC,OAAO,EAAE,IAAI;CAKjB;;AAZN,AASU,QATF,CAKH,UAAU,CAIL,QAAQ,CAAC;EACJ,IAAI,EAAE,CAAC;CACX",
+    "sources": [
+        "DefaultLayout.module.scss"
+    ],
+    "names": [],
+    "file": "DefaultLayout.module.css"
+}
