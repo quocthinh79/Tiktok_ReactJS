@@ -15,8 +15,21 @@
         align-items: center;
         justify-content: space-between;
 
-        .search {
+        .search,
+        .search-value {
             width: 361px;
+        }
+
+        .search-title {
+            height: 30px;
+            padding: 5px 12px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            color: rgba(22, 24, 35, 0.5);
+        }
+
+        .search {
             height: var(--search-height);
             border-radius: 92px;
             background: rgba(22, 24, 35, 0.06);
@@ -53,6 +66,7 @@
                 caret-color: var(--primary);
             }
 
+            // CSS khi input có chữ
             .input-search:not(:placeholder-shown) ~ .search-btn {
                 color: rgba(22, 24, 35, 0.75);
             }
