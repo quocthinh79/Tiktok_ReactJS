@@ -6,10 +6,14 @@ import { Wrapper as PopperWrapper } from '~/component/Popper';
 import { useSpring, motion } from 'framer-motion';
 
 import MenuItem from './MenuItem';
+import HeaderMenu from './HeaderMenu';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [] }) {
+const defaultFn = () => {};
+
+function Menu({ children, items = [], onChange = defaultFn }) {
     const springConfig = { damping: 15, stiffness: 300 };
     const initialScale = 0.5;
     const opacity = useSpring(0, springConfig);
@@ -32,8 +36,26 @@ function Menu({ children, items = [] }) {
         opacity.set(0);
     }
 
+    const [history, setHistory] = useState([{ data: items }]);
+    const current = history[history.length - 1];
+
     const renderItems = () => {
-        return items.map((item, index) => <MenuItem key={index} data={item} />);
+        return current.data.map((item, index) => {
+            const isParent = !!item.children;
+            return (
+                <MenuItem
+                    key={index}
+                    data={item}
+                    onClick={() => {
+                        if (isParent) {
+                            setHistory((prev) => [...prev, item.children]);
+                        } else {
+                            onChange(item);
+                        }
+                    }}
+                />
+            );
+        });
     };
     return (
         <Tippy
@@ -42,7 +64,17 @@ function Menu({ children, items = [] }) {
             placement="bottom-end"
             render={(attrs) => (
                 <motion.div style={{ scale, opacity }} className={cx('content')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('menu-popper')}>{renderItems()}</PopperWrapper>
+                    <PopperWrapper className={cx('menu-popper')}>
+                        {history.length > 1 && (
+                            <HeaderMenu
+                                title="Language"
+                                onBack={() => {
+                                    setHistory((prev) => prev.slice(0, prev.length - 1));
+                                }}
+                            />
+                        )}
+                        {renderItems()}
+                    </PopperWrapper>
                 </motion.div>
             )}
             animation={true}
