@@ -2,7 +2,7 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faPlug, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react/headless';
 import { useSpring, motion } from 'framer-motion';
@@ -10,6 +10,8 @@ import { useState } from 'react';
 
 import { Wrapper as PopperWrapper } from '~/component/Popper';
 import AccountItem from '~/component/AccountItem';
+
+import Button from '~/component/Button';
 
 const cx = classNames.bind(styles);
 
@@ -36,7 +38,7 @@ function Header() {
         opacity.set(0);
     }
 
-    const [searchResult, setSearchResult] = useState([1, 2, 3]);
+    const [searchResult, setSearchResult] = useState([]);
 
     return (
         <header className={cx('wrapper')}>
@@ -75,7 +77,14 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('action')}></div>
+                <div className={cx('action')}>
+                    <Button outlinethin medium iconLeft={<FontAwesomeIcon icon={faPlus} />}>
+                        Upload
+                    </Button>
+                    <Button primary medium>
+                        Log in
+                    </Button>
+                </div>
             </div>
         </header>
     );
