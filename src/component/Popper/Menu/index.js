@@ -34,6 +34,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
 
         scale.set(initialScale);
         opacity.set(0);
+        setHistory((prev) => prev.slice(0, 1));
     }
 
     const [history, setHistory] = useState([{ data: items }]);
