@@ -1,4 +1,7 @@
 .wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
@@ -17,9 +20,15 @@
     }
 }
 
-.icon-btn + .title, 
+.icon-btn + .title,
 .title + .icon-btn {
     margin-left: 8px;
+}
+
+.icon-btn {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
 }
 
 //Button styles
@@ -52,6 +61,19 @@
     color: #161823;
     background-color: #fff;
     border: 1px solid rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.nonBorder {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #161823;
+    background-color: #fff;
+    border: none;
 
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
