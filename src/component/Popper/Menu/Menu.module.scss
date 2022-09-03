@@ -6,9 +6,33 @@
         width: 100%;
         justify-content: start;
         padding: 11px 16px;
+        height: 42px;
     }
 }
 
 .menu-popper {
-     padding-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    position: relative;
+    margin-top: -8px;
+
+    .back-btn {
+        display: inline-block;
+        background-color: transparent;
+        width: 50px;
+        inset: 1 / 1;
+        cursor: pointer;
+    }
+
+    .header-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
