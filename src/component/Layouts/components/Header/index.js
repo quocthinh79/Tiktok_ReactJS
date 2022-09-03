@@ -2,7 +2,14 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faPlug, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faEllipsisVertical,
+    faLanguage,
+    faMagnifyingGlass,
+    faPlus,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react/headless';
 import { useSpring, motion } from 'framer-motion';
@@ -12,8 +19,26 @@ import { Wrapper as PopperWrapper } from '~/component/Popper';
 import AccountItem from '~/component/AccountItem';
 
 import Button from '~/component/Button';
+import Menu from '~/component/Popper/Menu';
+import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faLanguage} />,
+        title: 'Tiếng việt',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+];
 
 function Header() {
     const springConfig = { damping: 15, stiffness: 300 };
@@ -84,6 +109,11 @@ function Header() {
                     <Button primary medium>
                         Log in
                     </Button>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
