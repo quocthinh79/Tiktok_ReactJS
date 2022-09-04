@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/Tiktok_ReactJS/static/css/main.22d3453d.css",
-    "main.js": "/Tiktok_ReactJS/static/js/main.dc2137e6.js",
+    "main.css": "/Tiktok_ReactJS/static/css/main.7dca5f3e.css",
+    "main.js": "/Tiktok_ReactJS/static/js/main.cf2ac87f.js",
     "static/js/787.ab912dce.chunk.js": "/Tiktok_ReactJS/static/js/787.ab912dce.chunk.js",
     "static/media/ibm-plex-sans-all-400-normal.woff": "/Tiktok_ReactJS/static/media/ibm-plex-sans-all-400-normal.ac37447d88dc924364ce.woff",
+    "static/media/empty-image.png": "/Tiktok_ReactJS/static/media/empty-image.8fcbc35843f136611fe1.png",
     "static/media/ibm-plex-sans-latin-400-normal.woff2": "/Tiktok_ReactJS/static/media/ibm-plex-sans-latin-400-normal.4d32b6c22a800bdf8260.woff2",
     "static/media/ibm-plex-sans-latin-ext-400-normal.woff2": "/Tiktok_ReactJS/static/media/ibm-plex-sans-latin-ext-400-normal.77bcbc5ecc8f4f2bbe06.woff2",
     "static/media/ibm-plex-sans-cyrillic-400-normal.woff2": "/Tiktok_ReactJS/static/media/ibm-plex-sans-cyrillic-400-normal.2f77d85fb008b53d005a.woff2",
@@ -12,12 +13,12 @@
     "static/media/logo.svg": "/Tiktok_ReactJS/static/media/logo.7cb787e860e12eaf1443a8c5092785a1.svg",
     "static/media/ibm-plex-sans-vietnamese-400-normal.woff2": "/Tiktok_ReactJS/static/media/ibm-plex-sans-vietnamese-400-normal.2e4166a1b8ecf1ee5e45.woff2",
     "index.html": "/Tiktok_ReactJS/index.html",
-    "main.22d3453d.css.map": "/Tiktok_ReactJS/static/css/main.22d3453d.css.map",
-    "main.dc2137e6.js.map": "/Tiktok_ReactJS/static/js/main.dc2137e6.js.map",
+    "main.7dca5f3e.css.map": "/Tiktok_ReactJS/static/css/main.7dca5f3e.css.map",
+    "main.cf2ac87f.js.map": "/Tiktok_ReactJS/static/js/main.cf2ac87f.js.map",
     "787.ab912dce.chunk.js.map": "/Tiktok_ReactJS/static/js/787.ab912dce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22d3453d.css",
-    "static/js/main.dc2137e6.js"
+    "static/css/main.7dca5f3e.css",
+    "static/js/main.cf2ac87f.js"
   ]
 }
