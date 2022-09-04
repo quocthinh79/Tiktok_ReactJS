@@ -28,6 +28,8 @@ import Button from '~/component/Button';
 import Menu from '~/component/Popper/Menu';
 import { faCircleQuestion, faKeyboard, faMessage, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import { faTelegram, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import { InboxIcon, MessagesIcon } from '~/component/Icons';
+import Image from '~/component/Images';
 
 const cx = classNames.bind(styles);
 
@@ -167,12 +169,12 @@ function Header() {
                         <>
                             <Tippy content="Messages" placement="bottom">
                                 <button className={cx('icon-user-active')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <MessagesIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom">
                                 <button className={cx('icon-user-active')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -185,7 +187,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 alt="Avatar"
                                 className={cx('avatar-user')}
                                 src="https://p9-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/2028ef94a4c23b63c3f4cde5b073e66b.jpeg?x-expires=1662433200&x-signature=qm7kAxdmbv6k%2BbO7WW7GYdNGdnM%3D"
