@@ -1,5 +1,7 @@
 .content {
     width: 224px;
+    display: flex;
+    flex-direction: column;
 
     .menu-item {
         margin-left: 0;
@@ -7,6 +9,12 @@
         justify-content: start;
         padding: 11px 16px;
         height: 42px;
+        color: var(--text-color);
+        font-weight: 600;
+
+        &.separate {
+            border-top: 1px solid rgba(22, 24, 35, 0.03);
+        }
     }
 }
 
