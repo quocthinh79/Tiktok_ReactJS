@@ -5,7 +5,7 @@ import { DefaultLayout } from './component/Layouts';
 
 function App() {
     return (
-        <Router>
+        <Router basename="/Tiktok_ReactJS">
             <div className="App">
                 <Routes>
                     {publicRoutes.map((route, index) => {
