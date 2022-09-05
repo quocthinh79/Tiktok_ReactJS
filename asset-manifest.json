@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Tiktok_ReactJS/static/css/main.7dca5f3e.css",
-    "main.js": "/Tiktok_ReactJS/static/js/main.cf2ac87f.js",
+    "main.css": "/Tiktok_ReactJS/static/css/main.5973a8f6.css",
+    "main.js": "/Tiktok_ReactJS/static/js/main.bd53fadd.js",
     "static/js/787.ab912dce.chunk.js": "/Tiktok_ReactJS/static/js/787.ab912dce.chunk.js",
     "static/media/ibm-plex-sans-all-400-normal.woff": "/Tiktok_ReactJS/static/media/ibm-plex-sans-all-400-normal.ac37447d88dc924364ce.woff",
     "static/media/empty-image.png": "/Tiktok_ReactJS/static/media/empty-image.8fcbc35843f136611fe1.png",
@@ -13,12 +13,12 @@
     "static/media/logo.svg": "/Tiktok_ReactJS/static/media/logo.7cb787e860e12eaf1443a8c5092785a1.svg",
     "static/media/ibm-plex-sans-vietnamese-400-normal.woff2": "/Tiktok_ReactJS/static/media/ibm-plex-sans-vietnamese-400-normal.2e4166a1b8ecf1ee5e45.woff2",
     "index.html": "/Tiktok_ReactJS/index.html",
-    "main.7dca5f3e.css.map": "/Tiktok_ReactJS/static/css/main.7dca5f3e.css.map",
-    "main.cf2ac87f.js.map": "/Tiktok_ReactJS/static/js/main.cf2ac87f.js.map",
+    "main.5973a8f6.css.map": "/Tiktok_ReactJS/static/css/main.5973a8f6.css.map",
+    "main.bd53fadd.js.map": "/Tiktok_ReactJS/static/js/main.bd53fadd.js.map",
     "787.ab912dce.chunk.js.map": "/Tiktok_ReactJS/static/js/787.ab912dce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7dca5f3e.css",
-    "static/js/main.cf2ac87f.js"
+    "static/css/main.5973a8f6.css",
+    "static/js/main.bd53fadd.js"
   ]
 }
