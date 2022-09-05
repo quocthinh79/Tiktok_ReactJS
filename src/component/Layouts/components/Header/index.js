@@ -3,33 +3,24 @@ import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleXmark,
     faCoins,
     faEllipsisVertical,
     faGear,
     faLanguage,
-    faMagnifyingGlass,
     faPlus,
     faSignOut,
-    faSpinner,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import TippyHeadless from '@tippyjs/react/headless';
-import { useSpring, motion } from 'framer-motion';
-import { useState } from 'react';
-
-import { Wrapper as PopperWrapper } from '~/component/Popper';
-import AccountItem from '~/component/AccountItem';
 
 import Button from '~/component/Button';
 import Menu from '~/component/Popper/Menu';
-import { faCircleQuestion, faKeyboard, faMessage, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
-import { faTelegram, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import { InboxIcon, MessagesIcon } from '~/component/Icons';
 import Image from '~/component/Images';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 
@@ -65,30 +56,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const springConfig = { damping: 15, stiffness: 300 };
-    const initialScale = 0.5;
-    const opacity = useSpring(0, springConfig);
-    const scale = useSpring(initialScale, springConfig);
-
-    function onMount() {
-        scale.set(1);
-        opacity.set(1);
-    }
-
-    function onHide({ unmount }) {
-        const cleanup = scale.onChange((value) => {
-            if (value <= initialScale) {
-                cleanup();
-                unmount();
-            }
-        });
-
-        scale.set(initialScale);
-        opacity.set(0);
-    }
-
-    const [searchResult, setSearchResult] = useState([]);
-
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
             case 'language':
@@ -130,37 +97,7 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo.default} alt="Tiktok" />
                 </div>
-                <Tippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <motion.div style={{ scale, opacity }} className={cx('search-value')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                            </PopperWrapper>
-                        </motion.div>
-                    )}
-                    animation={true}
-                    onMount={onMount}
-                    onHide={onHide}
-                >
-                    <div className={cx('search')}>
-                        <input
-                            className={cx('input-search')}
-                            placeholder="Search accounts and videos"
-                            spellCheck={false}
-                        />
-                        <button className={cx('close')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                        <span className={cx('line-search')}></span>
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </Tippy>
+                <Search />
                 <div className={cx('action')}>
                     <Button outlinethin medium iconLeft={<FontAwesomeIcon icon={faPlus} />}>
                         Upload
@@ -174,6 +111,7 @@ function Header() {
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom">
                                 <button className={cx('icon-user-active')}>
+                                    <span className={cx('number-inbox')}>12</span>
                                     <InboxIcon />
                                 </button>
                             </Tippy>
