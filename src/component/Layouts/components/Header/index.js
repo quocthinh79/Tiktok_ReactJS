@@ -23,6 +23,8 @@ import Image from '~/component/Images';
 import Search from '../Search';
 import { Link } from 'react-router-dom';
 
+import routesConfig from '~/config/routes';
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -95,7 +97,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={'/'} className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo.default} alt="Tiktok" />
                 </Link>
                 <Search />
