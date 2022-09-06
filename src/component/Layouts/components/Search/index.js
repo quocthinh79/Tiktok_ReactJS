@@ -9,6 +9,10 @@ import { useEffect, useRef, useState } from 'react';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useDebounce } from '~/hooks';
 
+import axios from 'axios';
+
+import * as searchService from '~/apiService/searchService';
+
 const cx = classNames.bind(styles);
 
 function Search() {
@@ -52,16 +56,17 @@ function Search() {
             setSearchResult([]);
             return;
         }
-        setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setLoading(false);
-            });
+
+        const fetchApi = async () => {
+            setLoading(true);
+
+            const result = await searchService.search(debounce);
+            setSearchResult(result);
+
+            setLoading(false);
+        };
+
+        fetchApi();
     }, [debounce]);
 
     return (
