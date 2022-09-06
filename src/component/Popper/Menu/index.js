@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false }) {
     const springConfig = { damping: 15, stiffness: 300 };
     const initialScale = 0.5;
     const opacity = useSpring(0, springConfig);
@@ -62,6 +62,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
         <Tippy
             offset={[12, 8]}
             delay={[0, 700]}
+            hideOnClick={hideOnClick}
             interactive
             placement="bottom-end"
             render={(attrs) => (
