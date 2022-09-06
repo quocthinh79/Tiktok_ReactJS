@@ -68,3 +68,15 @@
     cursor: pointer;
     margin-left: 24px;
 }
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.relative-header {
+    position: relative;
+}
+
