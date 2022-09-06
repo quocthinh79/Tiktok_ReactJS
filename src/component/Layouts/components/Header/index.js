@@ -21,6 +21,7 @@ import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icon
 import { InboxIcon, MessagesIcon } from '~/component/Icons';
 import Image from '~/component/Images';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -94,9 +95,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={'/'} className={cx('logo')}>
                     <img src={images.logo.default} alt="Tiktok" />
-                </div>
+                </Link>
                 <Search />
                 <div className={cx('action')}>
                     <Button outlinethin medium iconLeft={<FontAwesomeIcon icon={faPlus} />}>
