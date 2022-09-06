@@ -7,6 +7,7 @@ import classNames from 'classnames/bind';
 import { useSpring, motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -38,6 +39,8 @@ function Search() {
     const [showSearchResult, setShowSearchResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
+    const debounce = useDebounce(searchValue, 500);
+
     const inputSearchRef = useRef();
 
     const handlerHideResult = () => {
@@ -45,12 +48,12 @@ function Search() {
     };
 
     useEffect(() => {
-        if (!searchValue.trim()) {
+        if (!debounce.trim()) {
             setSearchResult([]);
             return;
         }
         setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearchResult(res.data);
@@ -59,7 +62,7 @@ function Search() {
             .catch((err) => {
                 setLoading(false);
             });
-    }, [searchValue]);
+    }, [debounce]);
 
     return (
         <TippyHeadless
