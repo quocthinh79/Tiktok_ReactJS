@@ -24,6 +24,7 @@ import Search from '../Search';
 import { Link } from 'react-router-dom';
 
 import routesConfig from '~/config/routes';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -94,8 +95,22 @@ function Header() {
         },
     ];
 
+    let classesFixed = cx('wrapper', 'fixed-header');
+    let classesRelarived = cx('wrapper', 'relative-header');
+
+    const [scroll, setScroll] = useState(false);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        if (winScroll >= 70) {
+            setScroll(true);
+        } else {
+            setScroll(false);
+        }
+    });
+
     return (
-        <header className={cx('wrapper')}>
+        <header className={scroll ? classesFixed : classesRelarived}>
             <div className={cx('inner')}>
                 <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo.default} alt="Tiktok" />
@@ -126,7 +141,7 @@ function Header() {
                             </Button>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu currentUser={currentUser} items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
                                 alt="Avatar"

@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false }) {
+function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false, currentUser }) {
     const springConfig = { damping: 15, stiffness: 300 };
     const initialScale = 0.5;
     const opacity = useSpring(0, springConfig);
@@ -48,6 +48,13 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false 
                     key={index}
                     data={item}
                     onClick={() => {
+                        switch (item.title) {
+                            case 'Logout':
+                                currentUser = false;
+                                break;
+                            default:
+                                break;
+                        }
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
                         } else {
@@ -70,13 +77,13 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false 
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
                             <HeaderMenu
-                                title="Language"
+                                title={current.title}
                                 onBack={() => {
                                     setHistory((prev) => prev.slice(0, prev.length - 1));
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-scrollable')}>{renderItems()}</div>
                     </PopperWrapper>
                 </motion.div>
             )}

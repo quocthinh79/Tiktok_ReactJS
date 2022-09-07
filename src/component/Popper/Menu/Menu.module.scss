@@ -20,6 +20,12 @@
 
 .menu-popper {
     padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-scrollable {
+    overflow-y: overlay;
 }
 
 .header-menu {
@@ -28,6 +34,7 @@
     height: 50px;
     position: relative;
     margin-top: -8px;
+    flex-shrink: 0;
 
     .back-btn {
         display: inline-block;

@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Fragment } from 'react';
+
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -69,5 +70,25 @@ function Button({
         </Component>
     );
 }
+
+Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    outlinethin: PropTypes.bool,
+    rounder: PropTypes.bool,
+    nonBorder: PropTypes.bool,
+    small: PropTypes.bool,
+    medium: PropTypes.bool,
+    lagger: PropTypes.bool,
+    // isRequired -> Bắt buộc phải truyền vào
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func,
+    iconLeft: PropTypes.node,
+    iconRight: PropTypes.node,
+    disable: PropTypes.bool,
+    className: PropTypes.string,
+};
 
 export default Button;
