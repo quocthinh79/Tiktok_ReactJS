@@ -65,6 +65,23 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false,
             );
         });
     };
+
+    const renderResult = (attrs) => (
+        <motion.div style={{ scale, opacity }} className={cx('content')} tabIndex="-1" {...attrs}>
+            <PopperWrapper className={cx('menu-popper')}>
+                {history.length > 1 && (
+                    <HeaderMenu
+                        title={current.title}
+                        onBack={() => {
+                            setHistory((prev) => prev.slice(0, prev.length - 1));
+                        }}
+                    />
+                )}
+                <div className={cx('menu-scrollable')}>{renderItems()}</div>
+            </PopperWrapper>
+        </motion.div>
+    );
+
     return (
         <Tippy
             offset={[12, 8]}
@@ -72,21 +89,7 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = false,
             hideOnClick={hideOnClick}
             interactive
             placement="bottom-end"
-            render={(attrs) => (
-                <motion.div style={{ scale, opacity }} className={cx('content')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('menu-popper')}>
-                        {history.length > 1 && (
-                            <HeaderMenu
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1));
-                                }}
-                            />
-                        )}
-                        <div className={cx('menu-scrollable')}>{renderItems()}</div>
-                    </PopperWrapper>
-                </motion.div>
-            )}
+            render={renderResult}
             animation={true}
             onMount={onMount}
             onHide={onHide}
