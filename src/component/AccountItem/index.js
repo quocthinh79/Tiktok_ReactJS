@@ -6,6 +6,8 @@ import Image from '../Images';
 import { DefaultLayout } from '../Layouts';
 import styles from './AccountItem.module.scss';
 
+import PropTypes from 'prop-types';
+
 const cx = classNames.bind(styles);
 
 function AccountItem({ data }) {
@@ -22,5 +24,9 @@ function AccountItem({ data }) {
         </Link>
     );
 }
+
+AccountItem.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AccountItem;
